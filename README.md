@@ -8,3 +8,8 @@ Semester 1 2022
 2. Erika
 3. Natty
 4. Andy
+
+## Admin
+
+user: admin
+password: AdminPassword
