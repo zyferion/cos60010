@@ -39,4 +39,11 @@ $ # Start the app - custom port
 $ # python manage.py runserver 0.0.0.0:<your_port>
 $
 $ # Access the web app in browser: http://127.0.0.1:8000/
+$
+$ # Create super user
+$ py manage.py createsuperuser
+$ 
+$ # Access the admin page
+$ http://127.0.0.1:8000/admin
+
 ```
