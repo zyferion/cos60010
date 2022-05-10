@@ -11,4 +11,6 @@ urlpatterns = [
         
     path('', views.QuizListView.as_view(), name='main-view'),
     path('<pk>/', views.quiz_view, name='quiz-view'),
+    path('add_quiz/', views.add_quiz, name='add-quiz'),
+    path('add_quiz/addrecord', views.addrecord, name='addrecord'),
 ]
