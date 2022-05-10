@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+import random
 
 # Create your models here.
 
@@ -16,8 +17,11 @@ class Quiz(models.Model):
     def __str__(self):
         return f"{self.name}--{self.subject}"
     
+    # randomize questions
     def get_questions(self):
-        return self.question_set.all()[:self.number_of_questions]
+        questions = list(self.question_set.all()) # store all questions in a list
+        random.shuffle(questions) # shuffle order
+        return questions[:self.number_of_questions]
     
     # define plural
     class Meta:
