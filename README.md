@@ -44,6 +44,6 @@ $ # Create super user
 $ py manage.py createsuperuser
 $ 
 $ # Access the admin page
-$ http://127.0.0.1:8000/admin
+$ # HERE: http://127.0.0.1:8000/admin
 
 ```
