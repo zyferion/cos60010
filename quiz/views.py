@@ -27,8 +27,8 @@ def add_quiz(request):
     return HttpResponse(template.render({}, request))
     
 #Mia needs to fix this!!
-def addrecord(request):
-x = request.POST['ques']
-question = (ques=x)
-question.save()
-return HttpResponseRedirect(reverse('index'))
+#def addrecord(request):
+#x = request.POST['ques']
+#question = (ques=x)
+#question.save()
+#return HttpResponseRedirect(reverse('index'))
