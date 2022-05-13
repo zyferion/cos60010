@@ -21,7 +21,7 @@ $ python -m venv env
 $ source env/bin/activate
 $
 $ # Virtualenv modules installation (Windows based systems)
-$ # virtualenv env
+$ # py -m venv env 
 $ # .\env\Scripts\activate
 $
 $ # Install modules
