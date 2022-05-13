@@ -1,0 +1,34 @@
+<!--
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>This is the quiz page</h1>
+
+</body>
+</html>
+-->
+
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block scripts %}
+    <script src="{% static 'quiz/quiz.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block title %}
+{{obj.name}}
+{% endblock title %}
+
+{% block content %}
+<h2>{{obj.subject}} - {{obj.name}}</h2>
+
+<hr>
+
+<form id = "quiz-form" class="mt-4 mb-3">
+    {% csrf_token %}
+    <div id = "quiz-box"></div>
+    <button type = "Submit" class="btn btn-primary mt-3">Submit</button>
+</form>
+{% endblock content %}
