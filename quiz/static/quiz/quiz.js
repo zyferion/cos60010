@@ -22,7 +22,7 @@ $.ajax({
                  answers.forEach(answer=>{
                      quizBox.innerHTML += `
                      <div>
-                        <input type="radio" class="ans" id="${question}-${answer}" name="${question} value="${answer}">
+                        <input type="radio" class="ans" id="${question}-${answer}" name="${question}" value="${answer}">
                         <label for = "${question}">${answer}</label>
                      </div>
                 `
@@ -58,12 +58,13 @@ const sendData = () => {
         }
     })
 
+    // send data to /save
     $.ajax({
         type: 'POST',
-        url: `${url}save`,
-        data:data,
+        url: `${url}save/`,
+        data: data,
         success: function(response){
-            console.log(reponse)
+            console.log(response)
         },
         error: function(error) {
             console.log(error)
