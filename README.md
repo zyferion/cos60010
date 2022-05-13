@@ -17,7 +17,7 @@ $ CLONE THIS REPO
 $ CHANGE DIRECTORY TO PROJECT (where directory where manage.py is stored)
 $
 $ # Virtualenv modules installation (Unix based systems)
-$ virtualenv env
+$ python -m venv env 
 $ source env/bin/activate
 $
 $ # Virtualenv modules installation (Windows based systems)
