@@ -96,5 +96,5 @@ def save_quiz_view(request, pk):
 
         score_ = score * multiplier
         Result.objects.create(quiz=quiz, user=user, score=score_)
- 
+
     return JsonResponse({'score':score_, 'results': results})
