@@ -45,9 +45,5 @@ $ py manage.py createsuperuser
 $ 
 $ # Access the admin page
 $ # HERE: http://127.0.0.1:8000/admin
-$
-$ # Migrate commands
-$ py manage.py makemigrations
-$ py manage.py migrate
 
 ```
