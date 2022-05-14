@@ -40,10 +40,14 @@ $ # python manage.py runserver 0.0.0.0:<your_port>
 $
 $ # Access the web app in browser: http://127.0.0.1:8000/
 $
-$ # Create super user
+$ # Create admin account (super user)
 $ py manage.py createsuperuser
 $ 
 $ # Access the admin page
 $ # HERE: http://127.0.0.1:8000/admin
+$
+$ # Migrate commands
+$ py manage.py makemigrations
+$ py manage.py migrate
 
 ```
