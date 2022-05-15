@@ -14,7 +14,7 @@ Semester 1 2022
 ```bash
 $ # Get the code
 $ CLONE THIS REPO
-$ CHANGE DIRECTORY TO PROJECT (where directory where manage.py is stored)
+$ CHANGE DIRECTORY TO PROJECT (directory where manage.py is stored)
 $
 $ # Virtualenv modules installation (Unix based systems)
 $ python -m venv env 
@@ -45,9 +45,5 @@ $ py manage.py createsuperuser
 $ 
 $ # Access the admin page
 $ # HERE: http://127.0.0.1:8000/admin
-$
-$ # Migrate commands
-$ py manage.py makemigrations
-$ py manage.py migrate
 
 ```
