@@ -1,9 +1,7 @@
 const url = window.location.href
 const quizBox = document.getElementById('quiz-box')
-const scoreBox = document.getElementById('score-box')
-const resultBox = document.getElementById('result-box')
 
-// present quiz questions and answers 
+
 $.ajax({
     type: 'GET',
     url: `${url}data`,
@@ -41,7 +39,7 @@ $.ajax({
 const quizForm = document.getElementById('quiz-form')
 const csrf = document.getElementsByName('csrfmiddlewaretoken')
 
-// get quiz results
+
 const sendData = () => {
     const elements = [...document.getElementsByClassName('ans')]
     
@@ -66,59 +64,7 @@ const sendData = () => {
         url: `${url}save/`,
         data: data,
         success: function(response){
-            // console.log(response)
-            const results = response.results
-            //console.log(results)
-            quizForm.style.display="none" // hide the form when it is submitted
-            
-            const cls = ['container', 'p-3', 'text-bold', 'h5']
-            scoreBox.classList.add(...cls)
-            scoreBox.innerHTML += `Total score: You got <b>${response.score} out of ${response.num_questions}</b> questions correct.`
-            scoreBox.innerHTML += `<br>`
-            scoreBox.innerHTML += `Percentage score: ${response.score_}%`
-
-            // display each question and response
-            results.forEach(res=>{
-                const resDiv = document.createElement("dev")
-                for (const [question, resp] of Object.entries(res)){
-                    //console.log(question)
-                    //console.log(resp)
-                    //console.log('===========')
-
-                    resDiv.innerHTML += question
-                    const cls = ['container', 'p-3', 'text-light', 'h6']
-                    resDiv.classList.add(...cls)
-
-                    if(resp=='not answered'){
-                        resDiv.innerHTML += '- not answered'
-                        resDiv.classList.add('bg-danger')
-                    } 
-                    else {
-                        const answer = resp['answered']
-                        const correct = resp['correct_answer']
-                        
-                        if (answer == correct) {
-                            resDiv.classList.add('bg-success')
-                            resDiv.innerHTML += ` | answered: ${answer}`
-                        } else {
-                            resDiv.classList.add('bg-danger')
-                            resDiv.innerHTML += ` | correct answer: ${correct}`
-                            resDiv.innerHTML += ` | answered:  ${answer}`
-                        }
-                    }
-                }
-
-                //const body = document.getElementsByTagName('BODY')[0]
-                resultBox.append(resDiv)
-
-                var hr_elem = document.createElement("p")
-                resultBox.append(hr_elem)
-
-                var br_elem = document.createElement("br")
-                resultBox.append(br_elem)
-            })
-
-
+            console.log(response)
         },
         error: function(error) {
             console.log(error)

@@ -14,8 +14,4 @@ class QuestionAdmin(admin.ModelAdmin):
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Answer)
 
-# Ensure created_dttm field is visible on admin page
-class ResultAdmin(admin.ModelAdmin):
-    readonly_fields = ('created_dttm',)
-
-admin.site.register(Result,ResultAdmin)
+admin.site.register(Result)

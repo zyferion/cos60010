@@ -9,14 +9,12 @@ modalBtns.forEach(modalBtn=> modalBtn.addEventListener('click', ()=>{
     const name = modalBtn.getAttribute('data-quiz')
     const numQuestions = modalBtn.getAttribute('data-questions')
     const subject = modalBtn.getAttribute('data-subject')
-    const end_dttm = modalBtn.getAttribute('data-end_dttm')
 
     modalBody.innerHTML = `
         <div class="h5 mb-3">Are you ready to attempt "<b>${name}</b>"?</div>
         <div class="text-muted">
             <ul>
                 <li>Subject: <b>${subject}</b></li>
-                <li>Due date: <b>${end_dttm}</b></li>
                 <li>Total number of questions: <b>${numQuestions}</b></li>
                 <li>You only have <b>one</b> attempt. </li>
                 <li> All questions are of <b>equal</b> value. </li>

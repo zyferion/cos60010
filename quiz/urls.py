@@ -1,5 +1,4 @@
 from django.urls import path
-from django.views.generic.base import RedirectView
 
 from .views import (
     index,
@@ -16,8 +15,10 @@ app_name = 'quiz'
 urlpatterns = [
     path('index/', index, name='index'),
 
-    path('quiz/', QuizListView.as_view(), name='main-view'),
-    path('quiz/<pk>/', quiz_view, name='quiz-view'),
-    path('quiz/<pk>/save/', save_quiz_view, name='save-view'),
-    path('quiz/<pk>/data/', quiz_data_view, name='quiz-data-view'),
+    path('', QuizListView.as_view(), name='main-view'),
+    path('<pk>/', quiz_view, name='quiz-view'),
+    path('<pk>/save/', save_quiz_view, name='save-view'),
+    path('<pk>/data/', quiz_data_view, name='quiz-data-view'),
 ]
+
+
