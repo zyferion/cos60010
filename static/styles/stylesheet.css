@@ -1,0 +1,118 @@
+
+/*
+filename : 
+author: 
+stusentID: 
+last modifies: 
+description: Quiz Project
+*/
+
+
+/* ==========heading ========*/
+.bodyhomepage{
+  min-height:  100vh;
+  width: 100%;
+  background-image: url("image/bg-02.png");
+  position: relative;
+  background-position: center;
+  background-size: cover;
+}
+
+.title {
+  text-align: left;
+  margin-top: 180px;
+} 
+
+.btn-in-primary {
+  background-color: #eb8d2e;
+  color: white;
+}
+
+.btn-in-secondary {
+  background-color: #fda751;
+  color: white;
+}
+
+.btn-in-tertiary {
+  background-color: #ffc387;
+  color: black;
+}
+
+.button {
+  border: none;
+  background-color: #eb8d2e;
+  border-radius: 4px;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 1px 1px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #5c69ab;
+  color: white;
+}
+
+.button2 {
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 1px 1px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+#up {
+  color: #eb8d2e;
+}
+
+#logo{
+  width: 20%;
+}
+
+/* ==========section 2 ========*/
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background: rgb(219,226,226);
+}
+.row-shadow{
+  background: white;
+  border-radius: 30px;
+  box-shadow: 12px 12px 22px grey;
+  /* margin-top: 150px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 70px 32px;
+  padding-left: 60px;
+  */
+}
+img{
+  border-top-left-radius: 30px;
+}
+
+#createAccount{
+  margin-top: 10%
+}
+
+
+/* Custom Page & Navbar */
+html,
+body {
+  height: 100%;
+}
+.brand {
+  font-family: 'Radio Canada', sans-serif;
+  text-shadow: 1px 1px 4px #3f3f3f;
+}
