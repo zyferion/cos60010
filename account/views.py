@@ -1,42 +1,18 @@
-from django.shortcuts import render, redirect
-from .forms import NewUserForm
-from django.contrib.auth import login, authenticate
-from django.contrib import messages
-from django.contrib.auth.forms import AuthenticationForm
-
+from re import template
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.views import generic
+from django.contrib.auth.views import PasswordResetView, LoginView
+from django.contrib.messages.views import SuccessMessageMixin
 # Create your views here.
 
-def register_request(request):
-    if request.method == "POST":
-        form = NewUserForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            messages.success(request, "Registration successful." )
-            return redirect("account:homepage")
-        messages.error(request, "Unsucessful registration. Invalid information.")
-    form = NewUserForm()
-    return render (request=request, template_name="account/register.html", context={"register_form":form})
+class SignUpView(generic.CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy("login")
+    template_name = "account/signup.html"
 
-def login_request(request):
-    if request.method == "POST":
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                messages.info(request, f"You are now logged in as {username}.")
-                return redirect("account:homepage")
-            else:
-                messages.error(request, "Invalid username or password.")
-        else:
-            messages.error(request,"Invalid username or password.")
-    form = AuthenticationForm()
-    return render(request=request, template_name="account/login.html", context={"login_form":form})
-
-def logout_request(request):
-    logout(request)
-    messages.info(request, "You have successfully logged out.")
-    return redirect("account:homepage")
+class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
+     template_name = 'account/password_reset_form.html'
+     
+class AdminLogin(LoginView):
+    template_name = 'account/login.html'
