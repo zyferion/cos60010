@@ -24,9 +24,9 @@ $ # Virtualenv modules installation (Windows based systems)
 $ # py -m venv env 
 $ # .\env\Scripts\activate
 $
-$ # Install modules
+$ # Install requirements
 $ # SQLIte version
-$ python m pip install django
+$ pip install requirements.txt
 $
 $ # Create tables
 $ python manage.py makemigrations
@@ -58,19 +58,20 @@ $ password: AdminPassword
 ## Project Directory Structure
 
 ```
-instatute/                      --- core project folder
+instatute/                 --- core project folder
 
-static/                         --- contains static elements used across all pages of the web app (i.e. images/styles)
-templates/                      --- contains html pages used across all pages of the web app (i.e. base html)
+static/                    --- contains static elements used across all pages of the web app (i.e. images/styles)
+templates/                 --- contains html pages used across all pages of the web app (i.e. base html)
 
-account/                        --- application directory for account management
-quiz/                           --- application directory for quiz (quiz, questions, answers, results)
-membership/                     --- application directory for user membership 
-leaderboard/                    --- application directory for leaderboard results
+account/                   --- application directory for account management
+quiz/                      --- application directory for quiz (quiz, questions, answers, results)
+membership/                --- application directory for user membership 
+leaderboard/               --- application directory for leaderboard results
 
-README.md
-db.sqlite3
-manage.py                       --- wrapper file for django-admin (allows you to run tasks)
+README.md                  --- this current file
+db.sqlite3                 --- SQLite database that stores project data
+manage.py                  --- wrapper file for django-admin (allows you to run tasks)
+requirements.txt           --- required python packages
 ```
 
 
