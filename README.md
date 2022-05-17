@@ -9,6 +9,26 @@ Semester 1 2022
 3. Natty
 4. Andy
 
+
+## Project Directory Structure
+
+```
+instatute/                 --- core project folder
+
+static/                    --- contains static elements used across all pages of the web app (i.e. images/styles)
+templates/                 --- contains html pages used across all pages of the web app (i.e. base html)
+
+account/                   --- application directory for account management
+quiz/                      --- application directory for quiz (quiz, questions, answers, results)
+membership/                --- application directory for user membership 
+leaderboard/               --- application directory for leaderboard results
+
+README.md                  --- this current file
+db.sqlite3                 --- SQLite database that stores project data
+manage.py                  --- wrapper file for django-admin (allows you to run tasks)
+requirements.txt           --- required python packages
+```
+
 ## Instructions
 
 ```bash
@@ -53,25 +73,6 @@ There is a pre-made admin user already in the db:
 ```
 $ user: admin
 $ password: AdminPassword
-```
-
-## Project Directory Structure
-
-```
-instatute/                 --- core project folder
-
-static/                    --- contains static elements used across all pages of the web app (i.e. images/styles)
-templates/                 --- contains html pages used across all pages of the web app (i.e. base html)
-
-account/                   --- application directory for account management
-quiz/                      --- application directory for quiz (quiz, questions, answers, results)
-membership/                --- application directory for user membership 
-leaderboard/               --- application directory for leaderboard results
-
-README.md                  --- this current file
-db.sqlite3                 --- SQLite database that stores project data
-manage.py                  --- wrapper file for django-admin (allows you to run tasks)
-requirements.txt           --- required python packages
 ```
 
 
