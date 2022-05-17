@@ -51,11 +51,14 @@ class Answer(models.Model):
     def __str__(self):
         return f"question: {self.question.text}, answer: {self.text}, correct: {self.correct}"
 
-# Results
+
+# Results model
 class Result(models.Model):
-    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    subject = models.CharField(max_length=100)
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     score = models.FloatField()
+    created_dttm = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return str(self.pk) 

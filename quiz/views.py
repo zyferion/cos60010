@@ -7,18 +7,20 @@ from django.http import HttpResponse
 from django.template import loader
 from .models import Question, Quiz, Answer, Result
 from django.http import JsonResponse
+from django.db import models
+#from datetime import datetime
 
 # Create your views here.
 
 # index
 def index(request):
-    template = loader.get_template('quiz/index.html')
+    template = loader.get_template('index.html')
     return HttpResponse(template.render())
 
 # main
 class QuizListView(ListView):
     model = Quiz
-    template = 'quiz/main.html' #for some reason this looks for quiz_list.html
+    template = 'quiz/quiz_list.html'
 
 # quiz
 def quiz_view(request, pk):
@@ -68,8 +70,10 @@ def save_quiz_view(request, pk):
 
         user = request.user
         quiz = Quiz.objects.get(pk=pk)
+        subject = quiz.subject
+        number_of_questions = quiz.number_of_questions
         score = 0
-        multiplier = 100 / quiz.number_of_questions
+        multiplier = 100 / number_of_questions
         results = []
         correct_answer = None
 
@@ -95,6 +99,7 @@ def save_quiz_view(request, pk):
                 results.append({str(q): {'answered': 'not answered'}})
 
         score_ = score * multiplier
-        Result.objects.create(quiz=quiz, user=user, score=score_)
-
-    return JsonResponse({'score':score_, 'results': results})
+        score_ = round(score_,2)
+        Result.objects.create( user=user, subject=subject, quiz=quiz, score=score_, created_dttm=models.DateTimeField(auto_now=True))
+ 
+    return JsonResponse({'score':score, 'score_':score_, 'results': results, 'num_questions': number_of_questions})
