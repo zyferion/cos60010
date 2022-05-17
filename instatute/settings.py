@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-f4fnjyg@g2f-gorx5@q!e&37fhf0ad$+npb1x$eo(+$cu@tnda'
+SECRET_KEY = 'django-insecure--=bvl)_x!ubv4q$o!wlr(@b$zagdc2a_ftxeo4q2igip35_n1z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # add project apps
-    'quiz'
+    # Define apps
+    'quiz',
 ]
 
 MIDDLEWARE = [
@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Australia/Melbourne'
 
 USE_I18N = True
 
@@ -118,12 +118,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
-STATICFILES_DIR = [
-    BASE_DIR / 'static',
-    BASE_DIR / 'quiz' / 'static',
-]
+STATICFILES_DIRS = [
+   BASE_DIR / 'static',
+
+   # App static dirs
+   BASE_DIR / 'quiz' / 'static',
+   
+   ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

@@ -23,7 +23,6 @@
 
 {% block content %}
 <h2>{{obj.subject}} - {{obj.name}}</h2>
-
 <hr>
 
 <form id = "quiz-form" class="mt-4 mb-3">
@@ -31,4 +30,9 @@
     <div id = "quiz-box"></div>
     <button type = "Submit" class="btn btn-primary mt-3">Submit</button>
 </form>
+<br>
+<div id="result-box"></div>
+<p></p>
+<div id="score-box"></div>
+
 {% endblock content %}
