@@ -54,3 +54,8 @@ There is a pre-made admin user already in the db:
 $ user: admin
 $ password: AdminPassword
 ```
+
+## Useful Resources
+
+1. Django Tutorial [https://www.w3schools.com/django/index.php]
+
