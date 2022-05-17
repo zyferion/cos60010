@@ -47,3 +47,10 @@ $ # Access the admin page
 $ # HERE: http://127.0.0.1:8000/admin
 
 ```
+
+There is a pre-made admin user already in the db:
+
+```
+$ user: admin
+$ password: AdminPassword
+```
