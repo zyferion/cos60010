@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
     # Admin
@@ -24,6 +25,9 @@ urlpatterns = [
 
     # Apps
     path('', include('quiz.urls', namespace='quiz')),
+    path('', include('account.urls', namespace='account')),
+    path('account/', include("django.contrib.auth.urls")),
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
 ]
 
 # Add static 
