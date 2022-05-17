@@ -55,6 +55,25 @@ $ user: admin
 $ password: AdminPassword
 ```
 
+## Project Directory Structure
+
+```
+instatute/                      --- core project folder
+
+static/                         --- contains static elements used across all pages of the web app (i.e. images/styles)
+templates/                      --- contains html pages used across all pages of the web app (i.e. base html)
+
+account/                        --- application directory for account management
+quiz/                           --- application directory for quiz (quiz, questions, answers, results)
+membership/                     --- application directory for user membership 
+leaderboard/                    --- application directory for leaderboard results
+
+README.md
+db.sqlite3
+manage.py                       --- wrapper file for django-admin (allows you to run tasks)
+```
+
+
 ## Useful Resources
 
 1. Django Tutorial [https://www.w3schools.com/django/index.php]
