@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Define apps
-    'quiz',
+    'quiz', 'account', 'membership'
 ]
 
 MIDDLEWARE = [
