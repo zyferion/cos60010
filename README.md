@@ -55,6 +55,13 @@ $ user: admin
 $ password: AdminPassword
 ```
 
+Student details in dn:
+```
+$ user: student1
+$ password: MondayGroup
+```
+*student can be ```student1```, ```student2```, ```student3```...
+
 ## Project Directory Structure
 
 ```
@@ -63,10 +70,9 @@ instatute/                      --- core project folder
 static/                         --- contains static elements used across all pages of the web app (i.e. images/styles)
 templates/                      --- contains html pages used across all pages of the web app (i.e. base html)
 
-account/                        --- application directory for account management
+user/                           --- application directory for account management (register, log in/out)
 quiz/                           --- application directory for quiz (quiz, questions, answers, results)
-membership/                     --- application directory for user membership 
-leaderboard/                    --- application directory for leaderboard results
+subjects/                       --- application directory for anything related to subjects (enrolments, leaderboards)
 
 README.md
 db.sqlite3
