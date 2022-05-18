@@ -9,6 +9,23 @@ Semester 1 2022
 3. Natty
 4. Andy
 
+## Project Directory Structure
+
+```
+instatute/                      --- core project folder
+
+static/                         --- contains static elements used across all pages of the web app (i.e. images/styles)
+templates/                      --- contains html pages used across all pages of the web app (i.e. base html)
+
+user/                           --- application directory for account management (register, log in/out)
+quiz/                           --- application directory for quiz (quiz, questions, answers, results)
+subjects/                       --- application directory for anything related to subjects (enrolments, leaderboards)
+
+README.md
+db.sqlite3
+manage.py                       --- wrapper file for django-admin (allows you to run tasks)
+```
+
 ## Instructions
 
 ```bash
@@ -61,24 +78,6 @@ $ user: student1
 $ password: MondayGroup
 ```
 *student can be ```student1```, ```student2```, ```student3```...
-
-## Project Directory Structure
-
-```
-instatute/                      --- core project folder
-
-static/                         --- contains static elements used across all pages of the web app (i.e. images/styles)
-templates/                      --- contains html pages used across all pages of the web app (i.e. base html)
-
-user/                           --- application directory for account management (register, log in/out)
-quiz/                           --- application directory for quiz (quiz, questions, answers, results)
-subjects/                       --- application directory for anything related to subjects (enrolments, leaderboards)
-
-README.md
-db.sqlite3
-manage.py                       --- wrapper file for django-admin (allows you to run tasks)
-```
-
 
 ## Useful Resources
 
