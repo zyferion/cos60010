@@ -33,17 +33,18 @@ $ # Get the code
 $ CLONE THIS REPO
 $ CHANGE DIRECTORY TO PROJECT (directory where manage.py is stored)
 $
+$ # You should run a virtual environment when running this project 
 $ # Virtualenv modules installation (Unix based systems)
 $ python -m venv env 
 $ source env/bin/activate
 $
 $ # Virtualenv modules installation (Windows based systems)
-$ # py -m venv env 
-$ # .\env\Scripts\activate
+$ py -m venv env 
+$ .\env\Scripts\activate
 $
 $ # Install modules
 $ # SQLIte version
-$ python m pip install django
+$ python -m pip install requirements.txt
 $
 $ # Create tables
 $ python manage.py makemigrations
