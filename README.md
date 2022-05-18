@@ -21,9 +21,10 @@ user/                           --- application directory for account management
 quiz/                           --- application directory for quiz (quiz, questions, answers, results)
 subjects/                       --- application directory for anything related to subjects (enrolments, leaderboards)
 
-README.md
-db.sqlite3
+README.md                       --- this current file
+db.sqlite3                      --- SQLite database that stores project data
 manage.py                       --- wrapper file for django-admin (allows you to run tasks)
+requirements.txt                --- required python packages
 ```
 
 ## Instructions
