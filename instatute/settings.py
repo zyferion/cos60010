@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 
     # Define apps
     'quiz',
+    'users',
+    'crispy_forms',
+    'subjects'
 ]
 
 MIDDLEWARE = [
@@ -125,6 +128,8 @@ STATICFILES_DIRS = [
 
    # App static dirs
    BASE_DIR / 'quiz' / 'static',
+   BASE_DIR / 'users' / 'static',
+   BASE_DIR / 'subjects' / 'static',
    
    ]
 
@@ -132,3 +137,9 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = 'home' #defines in subjects.views
+
+LOGIN_URL = 'login'

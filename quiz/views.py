@@ -14,9 +14,10 @@ from django.db import models
 
 # index
 def index(request):
-    template = loader.get_template('index.html')
-    return HttpResponse(template.render())
-
+    #template = loader.get_template('quiz/index.html')
+    #return HttpResponse(template.render())
+    return render(request, 'quiz/index.html')
+    
 # main
 class QuizListView(ListView):
     model = Quiz
