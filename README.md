@@ -45,7 +45,7 @@ $ .\env\Scripts\activate
 $
 $ # Install modules
 $ # SQLIte version
-$ python -m pip install requirements.txt
+$ python -m pip install -r requirements.txt
 $
 $ # Create tables
 $ python manage.py makemigrations
