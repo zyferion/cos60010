@@ -19,16 +19,26 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.views.generic.base import TemplateView
 
+from users import views as user_views
+from django.contrib.auth import views as auth_views
+from subjects import views as subjects_views
+
 urlpatterns = [
     # Admin
     path('admin/', admin.site.urls),
 
-    # Apps
+    # Quiz App
     path('', include('quiz.urls', namespace='quiz')),
-    path('', include('account.urls', namespace='account')),
-    path('account/', include("django.contrib.auth.urls")),
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    path('', include('membership.urls', namespace='membership'))
+
+  # Users App
+    path('register/', user_views.register, name ='register'),
+    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
+    path('profile/', user_views.profile, name='profile'),
+
+    # Subjects App
+   path('home/', subjects_views.home, name='home'),
+   
 ]
 
 # Add static 

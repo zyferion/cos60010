@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Define apps
-    'quiz', 'account', 'membership'
+
+    'quiz',
+    'users',
+    'crispy_forms',
+    'subjects'
+  
 ]
 
 MIDDLEWARE = [
@@ -125,6 +130,8 @@ STATICFILES_DIRS = [
 
    # App static dirs
    BASE_DIR / 'quiz' / 'static',
+   BASE_DIR / 'users' / 'static',
+   BASE_DIR / 'subjects' / 'static',
    
    ]
 
@@ -133,8 +140,10 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# django_project/settings.py
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'home' #defines in subjects.views
+
+LOGIN_URL = 'login'
+
+

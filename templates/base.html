@@ -47,27 +47,37 @@
             </div>
             <div class="row">
                 <div class="col-12 d-flex justify-content-center">
-                    <img src="../static/profile.jpg" class="rounded-circle m-3" alt="Profile Photo" style="width: 50%;">
+                    <img src="{% static 'images/profile.jpg' %}" class="rounded-circle m-3" alt="Profile Photo" style="width: 50%;">
                 </div>
             </div>
             <div class="row my-3">
                 <div class="col-12 d-flex justify-content-center">
-                    <h3>Student Name</h3>
+                    <h3>{{ user.first_name }} {{ user.last_name }}</h3>
                 </div>
+
+                <!-- TODO: This could move somewhere else -->
+                <div class="col-12 d-flex justify-content-center">
+                    {% if user.is_authenticated %}
+                        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                        {% else %}
+                        <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                        <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                    {% endif %}
+                </div>
+
             </div>
             <div class="row my-3">
                 <div class="col-12 d-flex justify-content-end">
                     <div class="list-group" style="width: 100%;">
-                        <a href="#" class="list-group-item list-group-item-action text-end bg-white">Dashboard</a>
-                        <a href="#" class="list-group-item list-group-item-action text-end bg-light">Classes</a>
+                        <a href="{% url 'home' %}" class="list-group-item list-group-item-action text-end bg-light">Home</a>
+                        <a href="{% url 'profile' %}" class="list-group-item list-group-item-action text-end bg-light">My Profile</a>
+                        <a href="#" class="list-group-item list-group-item-action text-end bg-light">My Classes</a>
+                        <a href="{% url 'quiz:main-view' %}" class="list-group-item list-group-item-action text-end bg-light">My Quizzes</a>
+                        <a href="#" class="list-group-item list-group-item-action text-end bg-light">Leaderboards</a>
                         <a href="{% url 'quiz:index' %}" class="list-group-item list-group-item-action text-end bg-light">Index Page</a>
-                        <a href="{% url 'quiz:main-view' %}" class="list-group-item list-group-item-action text-end bg-light">Quizzes</a>
-                        <a href="#" class="list-group-item list-group-item-action text-end bg-light">Leaderboard</a>
-                        <a href="#" class="list-group-item list-group-item-action text-end bg-light">Membership</a>
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="col-12 col-md-9 p-5">
           {% block content %}
@@ -75,6 +85,9 @@
         </div>
     </div>
 </div>
+
+
+
 <!-- JS Scripts required for functionality -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
