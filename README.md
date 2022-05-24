@@ -25,6 +25,7 @@ README.md                       --- this current file
 db.sqlite3                      --- SQLite database that stores project data
 manage.py                       --- wrapper file for django-admin (allows you to run tasks)
 requirements.txt                --- required python packages
+
 ```
 
 ## Instructions
@@ -43,9 +44,10 @@ $ # Virtualenv modules installation (Windows based systems)
 $ py -m venv env 
 $ .\env\Scripts\activate
 $
-$ # Install modules
+$ # Install requirements
 $ # SQLIte version
 $ python -m pip install -r requirements.txt
+
 $
 $ # Create tables
 $ python manage.py makemigrations
@@ -73,6 +75,7 @@ There is a pre-made admin user already in the db:
 $ user: admin
 $ password: AdminPassword
 ```
+
 
 Student details in dn:
 ```

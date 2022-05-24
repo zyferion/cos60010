@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Define apps
+
     'quiz',
     'users',
     'crispy_forms',
     'subjects'
+  
 ]
 
 MIDDLEWARE = [
@@ -143,3 +145,5 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'home' #defines in subjects.views
 
 LOGIN_URL = 'login'
+
+
