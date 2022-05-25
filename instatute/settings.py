@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'quiz',
     'users',
     'crispy_forms',
-    'subjects'
+    'subjects',
+    'membership'
   
 ]
 

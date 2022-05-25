@@ -22,6 +22,7 @@ from django.views.generic.base import TemplateView
 from users import views as user_views
 from django.contrib.auth import views as auth_views
 from subjects import views as subjects_views
+from membership import views as membership_views
 
 urlpatterns = [
     # Admin
@@ -39,6 +40,8 @@ urlpatterns = [
     # Subjects App
    path('home/', subjects_views.home, name='home'),
    
+   #Membership App
+    path('studentdetails/', membership_views.studentinfo, name='studentdetails')
 ]
 
 # Add static 
