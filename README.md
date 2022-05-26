@@ -77,7 +77,7 @@ $ password: AdminPassword
 ```
 
 
-Student details in dn:
+Example stdents details in db:
 ```
 $ user: student1
 $ password: MondayGroup
