@@ -20,7 +20,7 @@ Home
                 <div class="col-md-3">
                     <div class="card border-light p-3   shadow-sm" style="width: 18rem;">
                         <div class="card-body">
-                            <h1 class="number mb-3 display-2 text-center">10</h1>
+                            <h1 class="number mb-3 display-2 text-center">{{ quiz_count }}</h1>
                             <h5 class="card-title text-center">Total completed quizzes</h5>
                         </div>
                     </div>
@@ -28,27 +28,20 @@ Home
                 <div class="col-md-3">
                     <div class="card border-light p-3 shadow-sm" style="width: 18rem;">
                         <div class="card-body">
-                            <h1 class="number mb-3 display-2 text-center">3</h1>
-                            <h5 class="card-title text-center">Total class enrollment</h5>
+                            <h1 class="number mb-3 display-2 text-center">{{ enrolments_count }}</h1>
+                            <h5 class="card-title text-center">Total class enrolments</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card border-light p-3 shadow-sm" style="width: 18rem;">
                         <div class="card-body">
-                            <h1 class="number mb-3 display-2 text-center">79%</h1>
+                            <h1 class="number mb-3 display-2 text-center">{{ avg_score }}</h1>
                             <h5 class="card-title text-center">Average score</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card  p-3 shadow-sm bg-warning" style="width: 18rem;">
-                        <div class="card-body">
-                            <h1 class="number mb-3 display-2 text-center">8</h1>
-                            <h5 class="card-title text-center">Rank No.</h5>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div class="row mb-5">
                 <div class="col-6">
@@ -73,39 +66,22 @@ Home
             </div>
             <div>
                 <div class="card body shadow-sm p-3">
-                    <h5>Leaderboard</h5>
-                    <table class="table table-striped">
-                        <thead>
+                    <h5>Results</h5>
+                    <p>
+                        <table border = 1 class="table table-striped">
+                            <th>Subject</th>
+                            <th>Quiz Name</th>
+                            <th>Score</th>
+                            {% for i in user_results %}
                             <tr>
-                                <th scope="col">Rank No</th>
-                                <th scope="col">Student Name</th>
-                                <th scope="col">Completed quizzes</th>
-                                <th scope="col">Average Score</th>
+                                <td>{{ i.subject }}</td>
+                                <td>{{ i.quiz }}</td>
+                                <td>{{ i.score }}</td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark Otto</td>
-                                <td>2</td>
-                                <td>79%</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Jacob Bird</td>
-                                <td>5</td>
-                                <td>80%</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>4</td>
-                                <td>65%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <!-- <button type="button" class="btn col-2 bg-warning">See Full Leaderboard</button> -->
-                </div>
+                            {% endfor %}
+                        </table>
+                    </p>
+
             </div>
         </div>
 </div>
