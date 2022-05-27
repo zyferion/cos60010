@@ -23,15 +23,15 @@ Membership
                               <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Student Name</th>
-                                <th scope="col">Subject</th>
+                                <th scope="col">Subject Enrolled</th>
                               </tr>
                             </thead>
                             <tbody>
-                                {% for x in stud %}
+                                {% for x in stu %}
                               <tr>
-                                <td>{{x.stuids}}</td>
-                                <td>{{x.stuname}}</td>
-                                <td>{{x.stusubject}}</td>
+                                <td>{{x.student_id}}</td>
+                                <td>{{x.student_name}}</td>
+                                <td>{{x.subject}}</td>
                               </tr>
                             {% endfor %}
                           </tbody>

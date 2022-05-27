@@ -5,7 +5,7 @@ from django.db import models
 
 
 class Student(models.Model):
-    stuids = models.IntegerField()
-    stuname = models.CharField(max_length=70)
-    stusubject=models.CharField(max_length=70)
+    student_id = models.IntegerField()
+    student_name = models.CharField(max_length=70)
+    subject=models.CharField(max_length=70)
    
