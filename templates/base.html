@@ -82,9 +82,9 @@
                         <a href="{% url 'quiz:main-view' %}" class="list-group-item list-group-item-action text-end bg-light">My Quizzes</a>
                         <a href="#" class="list-group-item list-group-item-action text-end bg-light">Leaderboards</a>
                         <a href="{% url 'home' %}" class="list-group-item list-group-item-action text-end bg-light">All Subjects</a>
-                        <a href="{% url 'quiz:index' %}" class="list-group-item list-group-item-action text-end bg-light">Index Page</a>
                         <!-- Show admin-specific menu items -->
                         {% if user.is_superuser %}
+                        <span class="list-group-item text-end bg-dark text-light">Admin Tools</span>
                         <a href="#" class="list-group-item list-group-item-action text-end bg-light">Create Class</a>
                         <a href="#" class="list-group-item list-group-item-action text-end bg-light">Create Quiz</a>
                         {% endif %}
