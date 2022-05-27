@@ -39,6 +39,7 @@ urlpatterns = [
 
     # Subjects App
     path('home/', subjects_views.home, name='home'),
+    path('classes/', subjects_views.subjects, name='subjects'),
 
     # Membership App
     path('studentdetails/', membership_views.studentinfo, name='studentdetails')
