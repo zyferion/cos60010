@@ -47,11 +47,13 @@
             </div>
             <!-- Display profile img and name only if logged in -->
             {% if user.is_authenticated %}
-            <div class="row">
+            <!-- ** Hide profile image as app doesn't currently allow upload of one
+                <div class="row">
                 <div class="col-12 d-flex justify-content-center">
                     <img src="{% static 'images/profile.jpg' %}" class="rounded-circle m-3" alt="Profile Photo" style="width: 50%;">
                 </div>
             </div>
+            -->
             <div class="row my-3">
                 <div class="col-12 d-flex justify-content-center">
                     <h3>{{ user.first_name }} {{ user.last_name }}</h3>
@@ -69,6 +71,8 @@
                     {% endif %}
                 </div>
             </div>
+            <!-- Only display menu if user authenticated -->
+            {% if user.is_authenticated %}
             <div class="row my-3">
                 <div class="col-12 d-flex justify-content-end">
                     <div class="list-group" style="width: 100%;">
@@ -81,11 +85,13 @@
                         <a href="{% url 'quiz:index' %}" class="list-group-item list-group-item-action text-end bg-light">Index Page</a>
                         <!-- Show admin-specific menu items -->
                         {% if user.is_superuser %}
-                        Create New Quiz, etc.
+                        <a href="#" class="list-group-item list-group-item-action text-end bg-light">Create Class</a>
+                        <a href="#" class="list-group-item list-group-item-action text-end bg-light">Create Quiz</a>
                         {% endif %}
                     </div>
                 </div>
             </div>
+            {% endif %}
         </div>
         <div class="col-12 col-md-9 p-5">
           {% block content %}
