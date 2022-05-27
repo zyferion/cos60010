@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Membership
+
+{% endblock title %}
+
+{% block content %}
+            <!--main-->
+            <div class="col-12 p5">
+                <main class="mt-5 pt-3">
+                    <div class="container-fluid">
+                        <div class="row justify-content-between">
+                            <div class="mb-5 ">
+                            <h1>Membership</h1>
+                            </div>
+                        </div>
+                        <div class="card p-3 shadow-sm">
+                            <table class="table table-striped">
+                            <thead>
+                              <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Student Name</th>
+                                <th scope="col">Subject</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                {% for x in stud %}
+                              <tr>
+                                <td>{{x.stuids}}</td>
+                                <td>{{x.stuname}}</td>
+                                <td>{{x.stusubject}}</td>
+                              </tr>
+                            {% endfor %}
+                          </tbody>
+                          </table>
+                        </div>
+
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+<!--scruipt-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script scr="./js/bootstrap.bundle.min.js"></script>
+<script scr="./js/jquery-3.5.1.js"></script>
+<script scr="./js/script.js"></script>
+</body>
+{% endblock content %}
+</html>

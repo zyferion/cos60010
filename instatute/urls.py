@@ -42,7 +42,7 @@ urlpatterns = [
     path('classes/', subjects_views.subjects, name='classes'),
 
     # Membership App
-    path('studentdetails/', membership_views.studentinfo, name='studentdetails')
+    path('membership/', membership_views.membership, name='membership')
 ]
 
 # Add static
