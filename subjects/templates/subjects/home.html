@@ -66,7 +66,13 @@ Home
                 <div class="col-6">
                     <div class="card p-3 my-3 shadow-sm">
                         <h5>Quizzes</h5>
-                        <a href="{% url 'quiz:main-view' %}" class="btn bg-warning m-3">View Available Quizzes</a>
+                        <p>These are the quizzes available to you. Click the button below to attempt a quiz.</p>
+                        <ul>
+                            {% for obj in quizzes %}
+                                <li>{{obj.subject}} - {{obj.name}}</li>
+                            {% endfor %}
+                        </ul>
+                        <a href="{% url 'quiz:main-view' %}" class="btn bg-warning m-3">View and Attempt Available Quizzes</a>
                     </div>
                 </div>
             </div>
