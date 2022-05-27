@@ -45,6 +45,8 @@
                     <h2 class="brand">Instatute</h2>
                 </div>
             </div>
+            <!-- Display profile img and name only if logged in -->
+            {% if user.is_authenticated %}
             <div class="row">
                 <div class="col-12 d-flex justify-content-center">
                     <img src="{% static 'images/profile.jpg' %}" class="rounded-circle m-3" alt="Profile Photo" style="width: 50%;">
@@ -54,7 +56,9 @@
                 <div class="col-12 d-flex justify-content-center">
                     <h3>{{ user.first_name }} {{ user.last_name }}</h3>
                 </div>
-
+            </div>
+            {% endif %}
+            <div class="row my-3">
                 <!-- TODO: This could move somewhere else -->
                 <div class="col-12 d-flex justify-content-center">
                     {% if user.is_authenticated %}
@@ -64,7 +68,6 @@
                         <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
                     {% endif %}
                 </div>
-
             </div>
             <div class="row my-3">
                 <div class="col-12 d-flex justify-content-end">
@@ -74,7 +77,12 @@
                         <a href="#" class="list-group-item list-group-item-action text-end bg-light">My Classes</a>
                         <a href="{% url 'quiz:main-view' %}" class="list-group-item list-group-item-action text-end bg-light">My Quizzes</a>
                         <a href="#" class="list-group-item list-group-item-action text-end bg-light">Leaderboards</a>
+                        <a href="{% url 'home' %}" class="list-group-item list-group-item-action text-end bg-light">All Subjects</a>
                         <a href="{% url 'quiz:index' %}" class="list-group-item list-group-item-action text-end bg-light">Index Page</a>
+                        <!-- Show admin-specific menu items -->
+                        {% if user.is_superuser %}
+                        Create New Quiz, etc.
+                        {% endif %}
                     </div>
                 </div>
             </div>
