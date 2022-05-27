@@ -78,14 +78,15 @@
                     <div class="list-group" style="width: 100%;">
                         <a href="{% url 'home' %}" class="list-group-item list-group-item-action text-end bg-light">Home <i class="bi bi-speedometer2 p-2"></i></a>
                         <a href="{% url 'profile' %}" class="list-group-item list-group-item-action text-end bg-light">My Profile <i class="bi bi-book p-2"></i></a>
-                        <a href="#" class="list-group-item list-group-item-action text-end bg-light">My Classes <i class="bi bi-book p-2"></i></a>
+                        <a href="{% url 'classes' %}" class="list-group-item list-group-item-action text-end bg-light">My Classes <i class="bi bi-book p-2"></i></a>
                         <a href="{% url 'quiz:main-view' %}" class="list-group-item list-group-item-action text-end bg-light">My Quizzes <i class="bi bi-journal-check p-2"></i></a>
                         <a href="#" class="list-group-item list-group-item-action text-end bg-light">Leaderboard <i class="bi bi-ui-checks p-2"></i></a>
                         <!-- Show admin-specific menu items -->
                         {% if user.is_superuser %}
                         <span class="list-group-item text-end bg-dark text-light">Admin Tools</span>
-                        <a href="#" class="list-group-item list-group-item-action text-end bg-light">Create Class <i class="bi bi-book p-2"></i></a>
-                        <a href="#" class="list-group-item list-group-item-action text-end bg-light">Create Quiz <i class="bi bi-journal-check p-2"></i></a>
+                        <a href="{% url 'admin:index' %}" class="list-group-item list-group-item-action text-end bg-light">Classes <i class="bi bi-book p-2"></i></a>
+                        <a href="{% url 'admin:index' %}" class="list-group-item list-group-item-action text-end bg-light">Quizzes <i class="bi bi-journal-check p-2"></i></a>
+                        <a href="{% url 'admin:index' %}" class="list-group-item list-group-item-action text-end bg-light">Enrolment <i class="bi bi-file-earmark-person p-2"></i></a>
                         {% endif %}
                     </div>
                 </div>

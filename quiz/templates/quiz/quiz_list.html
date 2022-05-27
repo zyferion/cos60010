@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block scripts %}
-    <script src="{% static 'quiz/main.js' %}" defer></script>
+<script src="{% static 'quiz/main.js' %}" defer></script>
 {% endblock scripts %}
 
 {% block title %}
@@ -15,38 +15,46 @@ Quiz List
 
 <!-- Modal -->
 <div class="modal fade" id="quizStartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-    <div class="modal-content">
-    <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body-confirm"> Hello there
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="start-button" class="btn btn-primary">Start</button>
+            </div>
+        </div>
     </div>
-    <div class="modal-body" id="modal-body-confirm"> Hello there
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" id="start-button" class="btn btn-primary">Start</button>
-    </div>
-    </div>
-</div>
 </div>
 
-<div class="h1">Available Quizzes</div>
+<div class="h1">Quizzes</div>
 <hr>
-{% for obj in object_list %}
-    <button
-        class="btn btn-link modal-button"
-        data-pk="{{obj.pk}}"
-        data-quiz="{{obj.name}}"
-        data-subject="{{obj.subject}}"
-        data-questions="{{obj.number_of_questions}}"
-        data-end_dttm="{{obj.end_dttm}}"
-        data-toggle="modal"
-        data-target="#quizStartModal">
-        {{obj.subject}} - {{obj.name}}
-    </button><br>
 
-{% endfor %}
+<div class="row mb-5 mt-5 d-flex justify-content-centent">
+
+    {% for obj in object_list %}
+
+    <div class="col-lg-4">
+        <div class="card m-2">
+            <img class="card-img-top" src="{% static 'images/class.png' %}" alt="Generic Class Image">
+            <div class="card-body">
+                <h5 class="card-title">{{obj.subject}}</h5>
+                <h5 class="card-title">{{obj.name}}</h5>
+                <button class="btn btn-success modal-button" data-pk="{{obj.pk}}" data-quiz="{{obj.name}}"
+                    data-subject="{{obj.subject}}" data-questions="{{obj.number_of_questions}}"
+                    data-end_dttm="{{obj.end_dttm}}" data-toggle="modal" data-target="#quizStartModal">
+                    Take Quiz
+                </button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
 {% endblock content %}
