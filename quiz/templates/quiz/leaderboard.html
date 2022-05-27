@@ -9,13 +9,13 @@ Leaderboard
 
 {% block content %}
             <!--main-->
-            <div class="col-12 col-md-9 p5 bg-light">
+            <div class="col-12 p5">
                 <main class="mt-5 pt-3">
                     <div class="container-fluid">
                         <div class="row justify-content-between">
                             <div class="mb-5 ">
                             <h1>Leaderboard <i class="bi bi-slack"></i></h1>
-                            <h5>See you are at</h5>
+                            <h5>See where you are at</h5>
                             </div>
                         </div>
                         <div class="card p-3 shadow-sm">
@@ -25,7 +25,6 @@ Leaderboard
                               <tr>
                                 <th scope="col">Student Name</th>
                                 <th scope="col">Subject</th>
-                                <th scope="col">Completed quizzes</th>
                                 <th scope="col">Total Score</th>
                               </tr>
                             </thead>
@@ -34,12 +33,10 @@ Leaderboard
                               <tr>
                                 <td>{{x.user}}</td>
                                 <td>{{x.subject}}</td>
-                                <td>{{x.quiz|length}}</td>
                                 <td>{{x.score}}</td>
                               </tr>
-                              <tr>
-                            </tbody>
                             {% endfor %}
+                          </tbody>
                           </table>
                         </div>
 
@@ -50,7 +47,6 @@ Leaderboard
                                 <tr>
                                     <th scope="col">Student Name</th>
                                     <th scope="col">Subject</th>
-                                    <th scope="col">Completed quizzes</th>
                                     <th scope="col">Total Score</th>
                                   </tr>
                             </thead>
@@ -59,12 +55,10 @@ Leaderboard
                               <tr>
                                 <td>{{x.user}}</td>
                                 <td>{{x.subject}}</td>
-                                <td>{{x.quiz|length}}</td>
                                 <td>{{x.score}}</td>
                               </tr>
-                              <tr>
+                              {% endfor %}
                             </tbody>
-                            {% endfor %}
                           </table>
                         </div>
                         <div class="card p-3 mt-5 shadow-sm">
@@ -74,7 +68,6 @@ Leaderboard
                                 <tr>
                                     <th scope="col">Student Name</th>
                                     <th scope="col">Subject</th>
-                                    <th scope="col">Completed quizzes</th>
                                     <th scope="col">Total Score</th>
                                   </tr>
                             </thead>
@@ -83,12 +76,10 @@ Leaderboard
                               <tr>
                                 <td>{{x.user}}</td>
                                 <td>{{x.subject}}</td>
-                                <td>{{x.quiz|length}}</td>
                                 <td>{{x.score}}</td>
                               </tr>
-                              <tr>
-                            </tbody>
                             {% endfor %}
+                          </tbody>
                           </table>
                         </div>
 
