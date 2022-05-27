@@ -4,6 +4,7 @@ from django.views.generic.base import RedirectView
 from .views import (
     index,
     QuizListView,
+    leaderboard,
     quiz_view,
     quiz_data_view,
     save_quiz_view
@@ -20,4 +21,5 @@ urlpatterns = [
     path('quiz/<pk>/', quiz_view, name='quiz-view'),
     path('quiz/<pk>/save/', save_quiz_view, name='save-view'),
     path('quiz/<pk>/data/', quiz_data_view, name='quiz-data-view'),
+    path('leaderboard/', leaderboard, name = 'leaderboard')
 ]
