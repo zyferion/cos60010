@@ -16,9 +16,19 @@ Profile
         <img class="rounded-circle account-img" src="{% static 'images/user/avatar-1.jpg' %}">
         <div class="media-body">
           <h2 class="account-heading">Username: {{ user.username }}</h2>
+          <p class="text-secondary">User Type:
+            {% if user.is_superuser %}
+            Admin
+            {% else %}
+            Student
+            {% endif %}
+          </p>
           <p class="text-secondary">Email address: {{ user.email }}</p>
         </div>
       </div>
+
+
+
       <!-- FORM HERE -->
     </div>
 
