@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block scripts %}
+<script src="{% static 'quiz/main.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block title %}
+Quiz List
+
+{% endblock title %}
+
+{% block content %}
+
+<div class="h1">Classes</div>
+<hr>
+
+<div class="row mb-5 mt-5 d-flex justify-content-centent">
+
+    {% for obj in subjects %}
+
+    <div class="col-lg-4">
+        <div class="card m-2">
+            <img class="card-img-top" src="{% static 'images/class.png' %}" alt="Generic Class Image">
+            <div class="card-body">
+                <h5 class="card-title">{{obj.subject}}</h5>
+                <h6 class="card-title">Start date: {{ obj.start_dt }}</h6>
+                <h6 class="card-title">End date: {{ obj.end_dt }}</h6>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}
