@@ -25,7 +25,10 @@ def home(request):
 
     # average result score
     avg_score = user_results.aggregate(Avg('score')).get('score__avg')
-    avg_score = round(avg_score,2)
+    
+    if(avg_score is not None):
+        avg_score = round(avg_score,2)
+    
 
     return render(request, 'subjects/home.html', 
     {   'subjects': subjects, 
