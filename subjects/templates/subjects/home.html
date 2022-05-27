@@ -11,23 +11,22 @@ Home
 <hr>
 
 <div>
-    <p>Instatute is currently offering the following classes for Semester 1, 2022:</p>
+    <p>The following subjects are currently available:</p>
     <ul>
         {% for obj in subjects %}
         <li><b>{{ obj.subject }}</b> -- Start date: {{ obj.start_dt }} - End date: {{ obj.end_dt }}</li>
         {% endfor %}
-    </ul>    
+    </ul>
 </div>
-<br>
 <div>
-    <p>You are currently enrolled in the classes:</p>
+    <p>You are currently enrolled in the following classes:</p>
     <ul>
         {% for obj in user_enrolments %}
         <li><b>{{ obj.subject }}</b></li>
         {% endfor %}
     </ul>
 
-    <p>If you would like to make changes to your enrolments please contact: <a href = "mailto: support@instatute.com">Instatute Support</a>.</p>
+    <p>If you would like to make changes to your enrolments please contact <a href = "mailto: support@instatute.com">Instatute Support</a>. Students cannot self-enrol.</p>
 </div>
 
 <div>
