@@ -109,9 +109,9 @@ def save_quiz_view(request, pk):
 # leaderboard
 
 def leaderboard(request):
-    leaderboard1 = Result.objects.filter(subject = 'MATH101').order_by('score')[0:10]
-    leaderboard2 = Result.objects.filter(subject = 'PHYSICS101').order_by('score')[0:10]
-    leaderboard3 = Result.objects.filter(subject = 'BIOLOGY101').order_by('score')[0:10]
+    leaderboard1 = Result.objects.filter(subject = 'MATH101').order_by('-score')[0:10]
+    leaderboard2 = Result.objects.filter(subject = 'PHYSICS101').order_by('-score')[0:10]
+    leaderboard3 = Result.objects.filter(subject = 'BIOLOGY101').order_by('-score')[0:10]
     # leaderboard1_count = Result.objects.filter(subject = 'MATH101').count()
     # leaderboard2_count = Result.objects.filter(subject = 'PHYSICS101').count()
     # leaderboard3_count = Result.objects.filter(subject = 'BIOLOGY101').count()
