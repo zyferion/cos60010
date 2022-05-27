@@ -16,3 +16,12 @@ def home(request):
     {   'subjects': subjects, 
         'user_enrolments': user_enrolments
         })
+
+@login_required # Require user logged in before they can access user home page
+def subjects(request):
+
+    subjects = Subject.objects.all()
+    
+    return render(request, 'subjects/subject_list.html', 
+    {   'subjects': subjects,
+        })
