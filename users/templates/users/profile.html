@@ -13,7 +13,7 @@ Profile
 
     <div class="content-section">
       <div class="media">
-        <img class="rounded-circle account-img" src="{% static 'images/user/avatar-1.jpg' %}">
+        <img class="rounded-circle account-img p-3" src="{% static 'images/user/avatar-1.jpg' %}">
         <div class="media-body">
           <h2 class="account-heading">Username: {{ user.username }}</h2>
           <p class="text-secondary">User Type:
@@ -24,12 +24,9 @@ Profile
             {% endif %}
           </p>
           <p class="text-secondary">Email address: {{ user.email }}</p>
+          <p>Please contact <a href="mailto: support@instatute.com">Instatute Support</a> if your profile needs updating.</p>
         </div>
       </div>
-
-
-
-      <!-- FORM HERE -->
     </div>
 
 {% endblock content %}
