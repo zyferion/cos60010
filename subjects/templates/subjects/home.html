@@ -7,40 +7,6 @@ Home
 
 {% block content %}
 
-<h1>Welcome back, {{ user.first_name }} {{ user.last_name }}</h1>
-<hr>
-
-<div>
-    <p>The following subjects are currently available:</p>
-    <ul>
-        {% for obj in subjects %}
-        <li><b>{{ obj.subject }}</b> -- Start date: {{ obj.start_dt }} - End date: {{ obj.end_dt }}</li>
-        {% endfor %}
-    </ul>
-</div>
-<div>
-    <p>You are currently enrolled in the following classes:</p>
-    <ul>
-        {% for obj in user_enrolments %}
-        <li><b>{{ obj.subject }}</b></li>
-        {% empty %}
-        <li><b>You are not currently enrolled in any subjects. Please contact <a
-                    href="mailto: support@instatute.com">Instatute Support</a>.</b></li>
-        {% endfor %}
-    </ul>
-
-    <p>If you would like to make changes to your enrolments please contact <a
-            href="mailto: support@instatute.com">Instatute Support</a>. Students cannot self-enrol.</p>
-</div>
-
-<div>
-    <ul>
-        {{ class_members }}
-    </ul>
-</div>
-
-<hr>
-
 <div class="col-12 col-md-12 p5">
     <main class="mt-5 pt-3">
         <div class="container-fluid">
