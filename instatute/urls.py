@@ -47,3 +47,8 @@ urlpatterns = [
 
 # Add static
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+# Customise Django Admin interface
+admin.site.site_header = 'Instatute'
+admin.site.index_title = 'Staff Admin Area'
+admin.site.site_title = 'Instatute Staff Admin Area'
