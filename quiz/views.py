@@ -104,3 +104,29 @@ def save_quiz_view(request, pk):
         Result.objects.create( user=user, subject=subject, quiz=quiz, score=score_, created_dttm=models.DateTimeField(auto_now=True))
  
     return JsonResponse({'score':score, 'score_':score_, 'results': results, 'num_questions': number_of_questions})
+
+
+# leaderboard
+
+def leaderboard(request):
+    leaderboard1 = Result.objects.filter(subject = 'MATH101').order_by('score')[0:10]
+    leaderboard2 = Result.objects.filter(subject = 'PHYSICS101').order_by('score')[0:10]
+    leaderboard3 = Result.objects.filter(subject = 'BIOLOGY101').order_by('score')[0:10]
+    # leaderboard1_count = Result.objects.filter(subject = 'MATH101').count()
+    # leaderboard2_count = Result.objects.filter(subject = 'PHYSICS101').count()
+    # leaderboard3_count = Result.objects.filter(subject = 'BIOLOGY101').count()
+
+    context = {
+        'leaderboard1' : leaderboard1,
+        'leaderboard2' : leaderboard2,
+        'leaderboard3' : leaderboard3,
+        # 'leaderboard1_count' : leaderboard1_count,
+        # 'leaderboard2_count' : leaderboard2_count,
+        # 'leaderboard3_count' : leaderboard3_count,
+    }
+    return render(request, 'quiz/leaderboard.html', context)
+   
+
+
+
+
