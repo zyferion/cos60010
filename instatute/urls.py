@@ -23,6 +23,7 @@ from users import views as user_views
 from django.contrib.auth import views as auth_views
 from subjects import views as subjects_views
 from membership import views as membership_views
+from quiz import views as quiz_views
 
 urlpatterns = [
     # Admin
@@ -30,6 +31,7 @@ urlpatterns = [
 
     # Quiz App
     path('', include('quiz.urls', namespace='quiz')),
+    path('leaderboard/', quiz_views.leaderboard, name='leaderboard'),
 
     # Users App
     path('register/', user_views.register, name='register'),
