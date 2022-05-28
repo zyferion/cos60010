@@ -8,6 +8,8 @@ from django.template import loader
 from .models import Question, Quiz, Answer, Result
 from django.http import JsonResponse
 from django.db import models
+from django.contrib.auth.decorators import login_required # Import login_required decorator
+from subjects.models import Enrolment
 #from datetime import datetime
 
 # Create your views here.
@@ -18,12 +20,13 @@ def index(request):
     #return HttpResponse(template.render())
     return render(request, 'quiz/index.html')
     
-# main
+# main quiz list
 class QuizListView(ListView):
     model = Quiz
     template = 'quiz/quiz_list.html'
 
 # quiz
+@login_required # Require user logged in before they can access
 def quiz_view(request, pk):
     quiz = Quiz.objects.get(pk=pk)
     return render(request, 'quiz/quiz.html', {'obj': quiz})
