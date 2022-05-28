@@ -22,6 +22,7 @@ membership/                     --- application directory for user memberships
 quiz/                           --- application directory for quiz (quiz, questions, answers, results, leaderboards)
 subjects/                       --- application directory for anything related to subjects (subjects, enrolments)
 
+.gitignore                      --- tells git what files to ignore when comitting to repo
 README.md                       --- this current file
 db.sqlite3                      --- SQLite database that stores project data
 manage.py                       --- wrapper file for django-admin (allows you to run tasks)
