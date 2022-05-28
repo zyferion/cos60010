@@ -1,9 +1,8 @@
-# Ignore env folder
+# Ignore folders
 env
-*.pyc
+
+# Ignore files with the extensions
 *.pyc
 *.exe
 *.bat
 *.ps1
-*.pyc
-*.pyc
