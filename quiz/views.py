@@ -10,6 +10,7 @@ from django.http import JsonResponse
 from django.db import models
 from django.contrib.auth.decorators import login_required # Import login_required decorator
 from subjects.models import Enrolment
+from django.db.models import Avg, F
 #from datetime import datetime
 
 # Create your views here.
@@ -112,20 +113,15 @@ def save_quiz_view(request, pk):
 # leaderboard
 
 def leaderboard(request):
-    leaderboard1 = Result.objects.filter(subject = 'MATH101').order_by('-score')[0:10]
-    leaderboard2 = Result.objects.filter(subject = 'PHYSICS101').order_by('-score')[0:10]
-    leaderboard3 = Result.objects.filter(subject = 'BIOLOGY101').order_by('-score')[0:10]
-    # leaderboard1_count = Result.objects.filter(subject = 'MATH101').count()
-    # leaderboard2_count = Result.objects.filter(subject = 'PHYSICS101').count()
-    # leaderboard3_count = Result.objects.filter(subject = 'BIOLOGY101').count()
+
+    leaderboard1 = Result.objects.filter(subject = 'MATH101').values('user','subject').annotate(avg_score=Avg('score')).order_by('-avg_score')[0:10]
+    leaderboard2 = Result.objects.filter(subject = 'PHYSICS101').values('user','subject').annotate(avg_score=Avg('score')).order_by('-avg_score')[0:10]
+    leaderboard3 = Result.objects.filter(subject = 'BIOLOGY101').values('user','subject').annotate(avg_score=Avg('score')).order_by('-avg_score')[0:10]
 
     context = {
         'leaderboard1' : leaderboard1,
         'leaderboard2' : leaderboard2,
         'leaderboard3' : leaderboard3,
-        # 'leaderboard1_count' : leaderboard1_count,
-        # 'leaderboard2_count' : leaderboard2_count,
-        # 'leaderboard3_count' : leaderboard3_count,
     }
     return render(request, 'quiz/leaderboard.html', context)
    
