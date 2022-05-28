@@ -18,8 +18,9 @@ static/                         --- contains static elements used across all pag
 templates/                      --- contains html pages used across all pages of the web app (i.e. base html)
 
 user/                           --- application directory for account management (register, log in/out)
-quiz/                           --- application directory for quiz (quiz, questions, answers, results)
-subjects/                       --- application directory for anything related to subjects (enrolments, leaderboards)
+membership/                     --- application directory for user memberships
+quiz/                           --- application directory for quiz (quiz, questions, answers, results, leaderboards)
+subjects/                       --- application directory for anything related to subjects (subjects, enrolments)
 
 README.md                       --- this current file
 db.sqlite3                      --- SQLite database that stores project data
