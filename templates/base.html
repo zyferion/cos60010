@@ -89,9 +89,9 @@
                         <!-- Show admin-specific menu items -->
                         {% if user.is_superuser %}
                         <span class="list-group-item text-end bg-dark text-light">Admin Tools</span>
-                        <a href="{% url 'admin:index' %}" class="list-group-item list-group-item-action text-end bg-light">Classes <i class="bi bi-book p-2"></i></a>
-                        <a href="{% url 'admin:index' %}" class="list-group-item list-group-item-action text-end bg-light">Quizzes <i class="bi bi-journal-check p-2"></i></a>
-                        <a href="{% url 'admin:index' %}" class="list-group-item list-group-item-action text-end bg-light">Enrolment <i class="bi bi-file-earmark-person p-2"></i></a>
+                        <a href="{% url 'admin:subjects_subject_changelist' %}" class="list-group-item list-group-item-action text-end bg-light">Classes <i class="bi bi-book p-2"></i></a>
+                        <a href="{% url 'admin:quiz_quiz_changelist' %}" class="list-group-item list-group-item-action text-end bg-light">Quizzes <i class="bi bi-journal-check p-2"></i></a>
+                        <a href="{% url 'admin:subjects_enrolment_changelist' %}" class="list-group-item list-group-item-action text-end bg-light">Enrolment <i class="bi bi-file-earmark-person p-2"></i></a>
                         {% endif %}
                     </div>
                 </div>
