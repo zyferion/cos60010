@@ -76,15 +76,15 @@
             <div class="row my-3">
                 <div class="col-12 d-flex justify-content-end">
                     <div class="list-group" style="width: 100%;">
-                        <a href="{% url 'home' %}" class="list-group-item list-group-item-action text-end bg-light">Home <i class="bi bi-speedometer2 p-2"></i></a>
-                        <a href="{% url 'profile' %}" class="list-group-item list-group-item-action text-end bg-light">My Profile <i class="bi bi-person-circle"></i></a>
+                        <a href="{% url 'home' %}" class="list-group-item list-group-item-action text-end bg-light">Dashboard <i class="bi bi-speedometer2 p-2"></i></a>
+                        <a href="{% url 'profile' %}" class="list-group-item list-group-item-action text-end bg-light">My Profile <i class="bi bi-person-circle p-2"></i></a>
                         <!-- Only show 'student view' heading for admins -->
                         {% if user.is_superuser %}
                         <span class="list-group-item text-end bg-dark text-light">Student View</span>
                         {% endif %}
                         <a href="{% url 'classes' %}" class="list-group-item list-group-item-action text-end bg-light">My Classes <i class="bi bi-book p-2"></i></a>
                         <a href="{% url 'quiz:main-view' %}" class="list-group-item list-group-item-action text-end bg-light">My Quizzes <i class="bi bi-journal-check p-2"></i></a>
-                        <a href="#" class="list-group-item list-group-item-action text-end bg-light">Leaderboard <i class="bi bi-ui-checks p-2"></i></a>
+                        <a href="{% url 'leaderboard' %}" class="list-group-item list-group-item-action text-end bg-light">Leaderboard <i class="bi bi-ui-checks p-2"></i></a>
                         <a href="{% url 'membership' %}" class="list-group-item list-group-item-action text-end bg-light">Class Membership <i class="bi bi-card-checklist p-2"></i></a>
                         <!-- Show admin-specific menu items -->
                         {% if user.is_superuser %}
