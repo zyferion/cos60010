@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from django.views.generic.base import TemplateView
-
+from django.shortcuts import redirect
 from users import views as user_views
 from django.contrib.auth import views as auth_views
 from subjects import views as subjects_views
@@ -26,6 +26,10 @@ from membership import views as membership_views
 from quiz import views as quiz_views
 
 urlpatterns = [
+    # Main homepage
+    # FIXME: this should be a public homepage not a redirect to the Dashboard
+    path('', lambda req: redirect('/home/')),
+
     # Admin
     path('admin/', admin.site.urls),
 

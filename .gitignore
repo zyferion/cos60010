@@ -3,3 +3,6 @@ env
 *.pyc
 *.pyc
 *.exe
+*.bat
+*.ps1
+*.pyc
