@@ -1,5 +1,6 @@
 from pickle import TRUE
 from unittest import result
+from django.forms import IntegerField
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import ListView
@@ -10,7 +11,8 @@ from django.http import JsonResponse
 from django.db import models
 from django.contrib.auth.decorators import login_required # Import login_required decorator
 from subjects.models import Enrolment
-from django.db.models import Avg, F
+from django.db.models import Avg, IntegerField
+from django.db.models.functions import Cast
 #from datetime import datetime
 
 # Create your views here.
@@ -114,9 +116,9 @@ def save_quiz_view(request, pk):
 
 def leaderboard(request):
 
-    leaderboard1 = Result.objects.filter(subject = 'MATH101').values('user','subject').annotate(avg_score=Avg('score')).order_by('-avg_score')[0:10]
-    leaderboard2 = Result.objects.filter(subject = 'PHYSICS101').values('user','subject').annotate(avg_score=Avg('score')).order_by('-avg_score')[0:10]
-    leaderboard3 = Result.objects.filter(subject = 'BIOLOGY101').values('user','subject').annotate(avg_score=Avg('score')).order_by('-avg_score')[0:10]
+    leaderboard1 = Result.objects.filter(subject = 'MATH101').values('user','subject').annotate(user_int = Cast('user',IntegerField())-1, avg_score=Avg('score')).order_by('-avg_score')[0:10]
+    leaderboard2 = Result.objects.filter(subject = 'PHYSICS101').values('user','subject').annotate(user_int = Cast('user',IntegerField())-1, avg_score=Avg('score')).order_by('-avg_score')[0:10]
+    leaderboard3 = Result.objects.filter(subject = 'BIOLOGY101').values('user','subject').annotate(user_int = Cast('user',IntegerField())-1, avg_score=Avg('score')).order_by('-avg_score')[0:10]
 
     context = {
         'leaderboard1' : leaderboard1,
